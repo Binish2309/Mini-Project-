@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Forum</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Center the chat container */
+        .chat-container {
+            width: 70%; /* Adjust the width to 50% for a centered look */
+            margin: 0 auto; /* Center the container */
+            border: 1px solid #ccc; /* Light border for chat box */
+            border-radius: 10px; /* Rounded corners */
+            padding: 20px; /* Space inside the box */
+            background-color: #f5f5f5; /* Light background */
+        }
+
+        .chat-box {
+            max-height: 400px; /* Limit the height */
+            overflow-y: auto; /* Allow scrolling for long chats */
+            background-color: #fff; /* White background for chat area */
+            padding: 10px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+        }
+
+        .message {
+            margin-bottom: 15px;
+            padding: 8px;
+            border-radius: 10px;
+        }
+
+        .message p {
+            margin: 0;
+        }
+
+        /* Align messages to the left for others and right for self */
+        .message.other {
+            background-color: #e1ffc7;
+            text-align: left;
+        }
+
+        .message.self {
+            background-color: #daf8e3;
+            text-align: right;
+        }
+
+        .message-input-section {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 15px;
+        }
+
+        .message-input-section input {
+            width: 75%; /* Input width adjustment */
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        .message-input-section button {
+            padding: 10px 15px;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .emoji-picker {
+            display: none; /* Hidden by default */
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            background-color: #fff;
+            position: absolute; /* Position the emoji picker absolutely */
+            bottom: 60px; /* Show above the input */
+            right: 20px; /* Right-align the emoji picker */
+            padding: 10px;
+            z-index: 1;
+        }
+
+        .emoji-picker img {
+            width: 30px;
+            height: 30px;
+            margin: 5px;
+            cursor: pointer;
+        }
+
+    
+    /* Styling for the welcome message */
+    .welcome-message {
+        font-size: 1.8em; /* Increase font size */
+        font-weight: bold; /* Make the text bold */
+        font-family: 'Arial', sans-serif; /* Change the font family */
+        color: #ffffff; /* Apply a nice green color */
+        text-align: center; /* Center the text */
+        margin-bottom: 20px; /* Add space below the message */
+    background-color:  #403124  ;
+         padding: 15px; /* Add padding for better spacing */
+        border-radius: 10px; /* Rounded corners */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle shadow for a 3D effect */
+    }
+
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Student Forum</h1>
+    </header>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <!-- Add more links here as needed -->
+    </nav>
+
+    <!-- Hamburger Dashboard Icon -->
+    <div class="dashboard-icon" id="dashboardIcon" onclick="toggleDashboardMenu()">
+        &#9776; <!-- Hamburger icon (menu icon) -->
+    </div>
+
+    <!-- Hidden Dashboard Menu -->
+    <div class="dashboard-menu" id="dashboardMenu">
+        <a href="select_resources.html">Resources</a>
+        <a href="forum.html">Student Forum</a>
+        <a href="mentors.html">Mentor Sessions</a>
+        <a href="events.html">Events</a>
+        <a href="suggestion.html">Suggestion Box</a>
+        <a href="collaboration.html">Student Collaboration</a>
+    </div>
+
+    <!-- Forum Section: Chat Interface -->
+    <div class="welcome-message">
+        <p>Welcome to the Student Forum! Interact with fellow students, ask questions, and discuss topics related to your studies.</p>
+    </div>
+    
+        <!-- Chatbox area -->
+        <div class="chat-container">
+            <div class="chat-box" id="chatBox">
+                <!-- Messages will appear here -->
+                <div class="message other">
+                    <p><strong>Student 1:</strong> What is the best way to prepare for UT </p>
+
+                </div>
+
+                <div class="message other">
+                <p><strong>Student 2:</strong> Refer question bank ppt provied by your professors </p>
+            </div>
+
+                <div class="message self">
+                    <p><strong>You:</strong> ask your seniors for P.Y UT papers</p>
+                </div>
+                <!-- More messages will appear here dynamically -->
+            </div>
+
+            <!-- Message input -->
+            <div class="message-input-section">
+                <input type="text" id="messageInput" placeholder="Type a message..." />
+                <button onclick="sendMessage()">Send</button>
+                <button onclick="toggleEmojiPicker()">Emoji</button>
+            </div>
+
+            <!-- Emoji picker -->
+            <div class="emoji-picker" id="emojiPicker">
+                <img src="smiling emoji.png" alt="emoji1" onclick="addEmoji('😊')">
+                <img src="laughing emoji.png" alt="emoji2" onclick="addEmoji('😂')">
+                <img src="thumbs up emoji.png" alt="emoji3" onclick="addEmoji('👍')">
+                <img src="heart emoji.png" alt="emoji4" onclick="addEmoji('❤️')">
+                <!-- Add more emojis as needed -->
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>&copy;2024 - MURH</p>
+    </footer>
+
+    <script>
+        function toggleDashboardMenu() {
+            var dashboardMenu = document.getElementById('dashboardMenu');
+            if (dashboardMenu.style.display === 'block') {
+                dashboardMenu.style.display = 'none';
+            } else {
+                dashboardMenu.style.display = 'block';
+            }
+        }
+
+        // Chatbox functions
+        function sendMessage() {
+            var messageInput = document.getElementById('messageInput').value;
+            if (messageInput.trim() !== '') {
+                var chatBox = document.getElementById('chatBox');
+                var message = document.createElement('div');
+                message.classList.add('message', 'self');
+                message.innerHTML = '<p><strong>You:</strong> ' + messageInput + '</p>';
+                chatBox.appendChild(message);
+                document.getElementById('messageInput').value = ''; // Clear input
+                chatBox.scrollTop = chatBox.scrollHeight; // Scroll to bottom
+            }
+        }
+
+        // Emoji Picker functions
+        function toggleEmojiPicker() {
+            var emojiPicker = document.getElementById('emojiPicker');
+            if (emojiPicker.style.display === 'block') {
+                emojiPicker.style.display = 'none';
+            } else {
+                emojiPicker.style.display = 'block';
+            }
+        }
+
+        function addEmoji(emoji) {
+            var messageInput = document.getElementById('messageInput');
+            messageInput.value += emoji; // Add emoji to input field
+            toggleEmojiPicker(); // Hide emoji picker after selection
+        }
+    </script>
+</body>
+</html>

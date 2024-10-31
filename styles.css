@@ -1,0 +1,234 @@
+/* General Styles */
+
+    @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap'); /* If using an equivalent Google Font */
+
+/* Apply the font to all elements */
+body {
+    font-family: 'Liberation Mono';
+    margin: 0;
+    padding: 0;
+    background:#6E6658; /* Light grey background */
+    color: #333;
+}
+
+/* Header Styles */
+header {
+    background-color:  #254E58; /* Grey header color */
+    color: rgb(255, 255, 255);
+    text-align: center;
+    padding: 20px 0;
+    font-family: "liberation mono" /* Header font style */
+  
+}
+
+/* Navigation Styles */
+nav {
+    background-color:#112D32; /* Grey color for the header containing tabs */
+    text-align: center;
+    padding: 10px;
+}
+
+nav a {
+    display: inline-block;
+    margin: 0 10px;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    border: 2px solid transparent;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+nav a:hover {
+    background-color: #103941; /* Light blue background on hover */
+    border-color: #112D32; /* Dark blue border on hover */
+    transition: color 0.3s ease;
+}
+
+/* Buttons Styles */
+.buttons .button, .select-container button {
+    display: inline-block;
+    margin: 10px;
+    padding: 15px 30px;
+    font-size: 18px;
+    color: white;
+    background-color:  #403124  ;
+    border: none;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+}
+
+.buttons .button:hover, .select-container button:hover {
+    background-color: #4F4A41; /* Soft green background on hover */
+}
+
+/* About Us and Form Container Styles */
+.about-us, .form-container {
+    margin: 30px auto;
+    max-width: 800px;
+    text-align: center;
+    background-color: #f0f0f0; /* Light grey background */
+    border-radius: 8px; /* Rounded corners */
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.about-us h2, .form-container h2 {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+}
+
+.about-us p, .quote p {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    line-height: 1.6;
+}
+
+/* Select Container Styles */
+.select-container {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+
+.select-container label {
+    margin-bottom: 5px;
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+}
+
+.select-container select {
+    margin-bottom: 15px;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 10px; /* Slightly rounded edges */
+    border: 1px solid #ccc; /* Light grey border */
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1); /* Soft inner shadow */
+    transition: all 0.3s ease;
+    width: 100%; /* Full width */
+}
+
+.select-container select:hover, .select-container select:focus {
+    background-color: #ffffff; /* Light blue background on hover */
+    border-color: #403124; /* Lighter blue border on hover */
+}
+
+.tabcontent a {
+    display: block;
+    margin: 10px auto;
+    padding: 10px;
+    max-width: 300px;
+    background-color: #f0f0f0;
+    text-decoration: none;
+    color: rgb(10, 10, 10);
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease; /* Add color transition */
+}
+
+.tabcontent a:hover {
+    background-color: #c4c1c1; /* Change to desired hover background color */
+    border-color: black;
+    color: #000; /* Change to desired hover text color */
+}
+
+
+/* Quote Styles */
+.quote {
+    text-align: center; /* Center the text within the quote */
+    margin: 20px auto; /* Center the quote div itself */
+    max-width: 600px; /* Optional: limit the width for better readability */
+}
+
+.quote p {
+    font-family: 'Roboto', sans-serif; /* Font for the quote */
+    font-weight: 400;
+    font-size: 18px;
+    color: #555;
+}
+
+/* Footer Styles */
+footer {
+    margin-top: 20px;
+    padding: 10px;
+    background-color:#112D32;
+    color: white;
+    text-align: center;
+}
+
+    .buttons {
+        display: flex;
+        justify-content: center; /* Centers the buttons horizontally */
+        gap: 20px; /* Adds some space between the buttons */
+        margin: 20px 0; /* Optional: Adjusts margin for the container */
+    }
+
+    .button {
+        padding: 10px 20px;
+        background-color: #444;
+        color: white;
+        text-decoration: none;
+        font-size: 16px;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+    }
+
+    .button:hover {
+        background-color: #555;
+    }
+    .box {
+        background-color:  #103941; /* Light gray background */
+        color: white;
+        border-radius: 8px; /* Rounded corners */
+        padding: 15px; /* Padding inside the box */
+        margin-top: 20px; /* Space above the box */
+    }
+    
+    /* Styles for the dashboard icon */
+.dashboard-icon {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #333;
+    color: white;
+    padding: 15px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 1000;
+    font-size: 24px; /* Increased size for the icon */
+}
+
+/* Styles for the hidden dashboard menu */
+.dashboard-menu {
+    display: none; /* Initially hidden */
+    position: fixed;
+    top: 60px;
+    right: 20px;
+    background-color: #444;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 999; /* Stays above other elements */
+}
+
+/* Apply similar styles as the navigation bar */
+.dashboard-menu a {
+    display: block;
+    text-decoration: none;
+    color: white;
+    font-size: 18px; /* Match font size of nav links */
+    margin: 10px 0; /* Spacing similar to nav links */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Match hover effect */
+    padding: 8px; /* Add padding for a better hover area */
+}
+
+.dashboard-menu a:hover {
+    background-color: #555; /* Match hover background color with nav links */
+    color: #ffffff; /* Ensure text color remains white on hover */
+}
+
+
+
+

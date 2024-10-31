@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MURH - Home</title> 
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css"> <!-- Keeping CSS consistent -->
+    <style>
+        /* Styles for the dashboard icon */
+        .dashboard-icon {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: #333;
+            color: white;
+            padding: 15px; /* Increased padding for larger icon */
+            border-radius: 50%;
+            cursor: pointer;
+            z-index: 1000; /* Ensures it stays on top */
+            font-size: 24px; /* Increased size for the icon */
+            display: none; /* Hide by default */
+        }
+
+        .dashboard-icon:hover {
+            background-color: #555;
+        }
+
+        /* Styles for the hidden dashboard menu */
+        .dashboard-menu {
+            display: none; /* Initially hidden */
+            position: fixed;
+            top: 60px;
+            right: 20px;
+            background-color: #444;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            z-index: 999; /* Stays above other elements */
+        }
+
+        /* Apply similar styles as the navigation bar */
+        .dashboard-menu a {
+            display: block;
+            text-decoration: none;
+            color: white;
+            font-size: 18px; /* Match font size of nav links */
+            margin: 10px 0; /* Spacing similar to nav links */
+            transition: background-color 0.3s ease, color 0.3s ease; /* Match hover effect */
+            padding: 8px; /* Add padding for a better hover area */
+        }
+
+        .dashboard-menu a:hover {
+            background-color: #555; /* Match hover background color with nav links */
+            color: #ffffff; /* Ensure text color remains white on hover */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to Mumbai University Resources Hub</h1>
+    </header>
+    
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+    </nav>
+
+    <div class="home-container">
+        <div class="buttons">
+            <a href="register.html" class="button">Register</a>
+            <a href="login.html" class="button">Login</a>
+        </div>
+
+        <div class="about-us">
+            <h2>About Us</h2>
+            <p>Welcome to the Mumbai University Resources Hub (MURH). Our mission is to provide students with a comprehensive range of educational resources to support their academic journey. We offer a variety of materials including e-books, presentations, syllabi, programming codes, handwritten notes, and previous year papers. Our platform is designed to help you succeed in your studies and achieve your educational goals.</p>
+        </div>
+
+        <div class="quote">
+            <p style="color: white;">"Education is the most powerful weapon which you can use to change the world." – Nelson Mandela</p>
+        </div>
+
+        <!-- Dashboard Icon -->
+        <div class="dashboard-icon" id="dashboardIcon" onclick="toggleDashboard()">
+            &#9776; <!-- Hamburger icon (menu icon) -->
+        </div>
+
+        <!-- Hidden Dashboard Menu -->
+        <div class="dashboard-menu" id="dashboardMenu">
+            <a href="select_resources.html">Resources</a>
+            <a href="forum.html">Student Forum</a>
+            <a href="mentors.html">Mentor Sessions</a>
+            <a href="events.html">Events</a>
+            <a href="suggestion.html">Suggestion Box</a>
+            <a href="collaboration.html">Student Collaboration</a>
+        </div>
+
+        <footer>
+            <p>&copy;2024 - MURH</p>
+        </footer>
+    </div>
+
+    <!-- JavaScript to toggle dashboard menu visibility -->
+    <script>
+        // Check if user is logged in (for demonstration, we'll use session storage)
+        if (sessionStorage.getItem('loggedIn')) {
+            document.getElementById('dashboardIcon').style.display = 'block'; // Show the dashboard icon
+        }
+
+        function toggleDashboard() {
+            var dashboardMenu = document.getElementById('dashboardMenu');
+            if (dashboardMenu.style.display === 'block') {
+                dashboardMenu.style.display = 'none';
+            } else {
+                dashboardMenu.style.display = 'block';
+            }
+        }
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

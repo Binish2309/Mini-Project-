@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select Resources - MURH</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Pacifico&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>MURH - Select Your Branch and Semester</h1>
+    </header>
+    
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="resources.html">Resources</a>
+        <a href="logout.html">Logout</a>
+    </nav>
+
+    <div class="form-container">
+        <div class="select-container">
+            <form id="selectForm">
+                <label for="branch">Select your Branch:</label>
+                <select id="branch" required>
+                    <option value="">--Select Branch--</option>
+                    <option value="civil">Civil</option>
+                    <option value="data_science">Data Science</option>
+                    <option value="aiml">AI & ML</option>
+                    <option value="computer">Computer</option>
+                    <option value="electronics_computer">Electronics & Computer Science</option>
+                    <option value="electrical">Electrical</option>
+                    <option value="mechanical">Mechanical</option>
+                </select>
+
+                <label for="semester">Select your Semester:</label>
+                <select id="semester" required>
+                    <option value="">--Select Semester--</option>
+                    <option value="sem1">Semester 1</option>
+                    <option value="sem2">Semester 2</option>
+                    <option value="sem3">Semester 3</option>
+                    <option value="sem4">Semester 4</option>
+                    <option value="sem5">Semester 5</option>
+                    <option value="sem6">Semester 6</option>
+                    <option value="sem7">Semester 7</option>
+                    <option value="sem8">Semester 8</option>
+                </select>
+
+                <button type="submit">View Resources</button>
+            </form>
+        </div>
+        <div class="quote">
+            <p>"The future belongs to those who believe in the beauty of their dreams." – Eleanor Roosevelt</p>
+        </div>
+    </div>
+    
+    <footer>
+        <p>&copy;2024 - MURH</p>
+    </footer>
+    
+    <script>
+        document.getElementById('selectForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const branch = document.getElementById('branch').value;
+            const semester = document.getElementById('semester').value;
+            if(branch && semester){
+                window.location.href = `resources.html?branch=${branch}&semester=${semester}`; // Redirect to resources page with selected branch and semester
+            } else {
+                alert('Please select both branch and semester.');
+            }
+        });
+    </script>
+</body>
+</html>

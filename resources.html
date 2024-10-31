@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resources - MURH</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Pacifico&display=swap" rel="stylesheet">
+    <style>
+select {
+        margin: 10px 0;
+        padding: 10px;
+        font-size: 16px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        background-color: white; /* White background color */
+        color: black; /* Black text color */
+        transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    /* Adding hover effect for select inputs */
+    select:hover {
+        background-color: grey; /* Grey background color on hover */
+        color: white; /* White text color on hover */
+    }
+
+        body {
+            font-family: "liberation mono" /* Sweet font style */
+            margin: 0;
+            padding: 0;
+        }
+
+       
+
+        
+
+        .container {
+            text-align: center; /* Center the content in the container */
+            margin: 20px auto;
+            max-width: 900px; /* Limit the width of the container */
+        }
+
+        .tabs {
+            margin: 20px 0;
+        }
+
+        .tablink {
+            background-color:#403124;    /* Button background color */
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            margin: 5px;
+        }
+
+        .tablink:hover {
+            background-color:#4F4A41 ; /* Soft green background on hover */
+        }
+
+        .tabcontent {
+            display: none;
+            text-align: center;
+        }
+
+       
+        
+    </style>
+</head>
+<body>
+    <header>
+        <h1>MURH - Resources</h1>
+    </header>
+    
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="select_resources.html">Select Branch and Sem</a>
+        
+    </nav>
+<!-- Hamburger Dashboard Icon -->
+<div class="dashboard-icon" id="dashboardIcon" onclick="toggleDashboardMenu()">
+    &#9776; <!-- Hamburger icon (menu icon) -->
+</div>
+
+<!-- Hidden Dashboard Menu -->
+<div class="dashboard-menu" id="dashboardMenu">
+    <a href="select_resources.html">Resources</a>
+    <a href="forum.html">Student Forum</a>
+    <a href="mentors.html">Mentor Sessions</a>
+    <a href="events.html">Events</a>
+    <a href="suggestion.html">Suggestion Box</a>
+    <a href="collaboration.html">Student Collaboration</a>
+</div>
+    <div class="container">
+       
+        <h2 id="resourcesTitle" style="color: white;">Available Resources</h2>
+
+
+        <div class="tabs">
+            <button class="tablink" onclick="openTab(event, 'ebooks')">E-Books</button>
+            <button class="tablink" onclick="openTab(event, 'ppt')">PPT</button>
+            <button class="tablink" onclick="openTab(event, 'syllabus')">Syllabus</button>
+            <button class="tablink" onclick="openTab(event, 'programming')">Programming Codes</button>
+            <button class="tablink" onclick="openTab(event, 'handwritten_notes')">Handwritten Notes</button>
+            <button class="tablink" onclick="openTab(event, 'papers')">Previous Year Papers</button>
+        </div>
+
+        <div id="ebooks" class="tabcontent">
+            <h3 style="color: white;">E-Books</h3>
+            <a href="path/to/ebook1.pdf" download>E-Book 1</a>
+            <a href="path/to/ebook2.pdf" download>E-Book 2</a>
+            <!-- Add more e-books as needed -->
+        </div>
+
+        <div id="ppt" class="tabcontent">
+            <h3 style="color: white;">PPT</h3>
+            <a href="path/to/ppt1.pptx" download>PPT 1</a>
+            <a href="path/to/ppt2.pptx" download>PPT 2</a>
+            <!-- Add more PPTs as needed -->
+        </div>
+
+        <div id="syllabus" class="tabcontent">
+            <h3 style="color: white;">Syllabus</h3>
+            <a href="path/to/syllabus1.pdf" download>Syllabus 1</a>
+            <a href="path/to/syllabus2.pdf" download>Syllabus 2</a>
+            <!-- Add more syllabuses as needed -->
+        </div>
+
+        <div id="programming" class="tabcontent">
+            <h3 style="color: white;">Programming Codes</h3>
+            <a href="path/to/code1.zip" download>Code 1</a>
+            <a href="path/to/code2.zip" download>Code 2</a>
+            <!-- Add more programming codes as needed -->
+        </div>
+
+        <div id="handwritten_notes" class="tabcontent">
+            <h3 style="color: white;">Handwritten Notes</h3>
+            <a href="path/to/note1.pdf" download>Note 1</a>
+            <a href="path/to/note2.pdf" download>Note 2</a>
+            <!-- Add more handwritten notes as needed -->
+        </div>
+
+        <div id="papers" class="tabcontent">
+            <h3 style="color: white;">Previous Year Papers</h3>
+            <a href="path/to/paper1.pdf" download>Paper 1</a>
+            <a href="path/to/paper2.pdf" download>Paper 2</a>
+            <!-- Add more previous year papers as needed -->
+        </div>
+    </div>
+    
+    <footer>
+        <p>&copy;2024 - MURH</p>
+    </footer>
+
+    <script>
+        // Function to display the content of the selected tab
+        function openTab(evt, tabName) {
+            // Get all elements with class="tabcontent" and hide them
+            var tabcontent = document.getElementsByClassName("tabcontent");
+            for (var i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+    
+            // Get all elements with class="tablink" and remove the class "active"
+            var tablinks = document.getElementsByClassName("tablink");
+            for (var i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+    
+            // Show the current tab, and add an "active" class to the button that opened the tab
+            document.getElementById(tabName).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+    
+        document.addEventListener('DOMContentLoaded', function() {
+            const branch = localStorage.getItem('selectedBranch');
+            const semester = localStorage.getItem('selectedSemester');
+    
+            // If branch or semester is not found, redirect to selection page
+            if (!branch || !semester) {
+                alert('Please select your branch and semester first.');
+                window.location.href = 'select_resources.html';
+            } else {
+                document.getElementById('resourcesTitle').innerText = `Resources for ${branch}, ${semester}`;
+            }
+    
+            // Automatically click the first tab to open it by default
+            document.querySelector('.tablink').click();
+        });
+    
+        // Clear local storage on logout
+        document.querySelector('a[href="logout.html"]').addEventListener('click', function() {
+            localStorage.removeItem('selectedBranch');
+            localStorage.removeItem('selectedSemester');
+        });
+    
+        // Optional: Clear local storage on home page visit
+        document.querySelector('a[href="index.html"]').addEventListener('click', function() {
+            localStorage.removeItem('selectedBranch');
+            localStorage.removeItem('selectedSemester');
+        });
+    </script>
+    
+    <script>
+        function toggleDashboardMenu() {
+            var dashboardMenu = document.getElementById('dashboardMenu');
+            if (dashboardMenu.style.display === 'block') {
+                dashboardMenu.style.display = 'none';
+            } else {
+                dashboardMenu.style.display = 'block';
+            }
+        }
+    </script>
+</body>
+</html>
+
+
+
+
+

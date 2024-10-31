@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mentor Sessions</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Mentor Sessions</h1>
+    </header>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <!-- Add more links here as needed -->
+    </nav>
+    <!-- Hamburger Dashboard Icon -->
+<div class="dashboard-icon" id="dashboardIcon" onclick="toggleDashboardMenu()">
+    &#9776; <!-- Hamburger icon (menu icon) -->
+</div>
+
+<!-- Hidden Dashboard Menu -->
+<div class="dashboard-menu" id="dashboardMenu">
+    <a href="select_resources.html">Resources</a>
+    <a href="forum.html">Student Forum</a>
+    <a href="mentors.html">Mentor Sessions</a>
+    <a href="events.html">Events</a>
+    <a href="suggestion.html">Suggestion Box</a>
+    <a href="collaboration.html">Student Collaboration</a>
+</div>
+    <div class="mentors-section">
+        <p>Find out about special sessions led by mentors. Click the links to join their live sessions.</p>
+    </div>
+    <footer>
+        <p>&copy;2024 - MURH</p>
+    </footer>
+    <script>
+        function toggleDashboardMenu() {
+            var dashboardMenu = document.getElementById('dashboardMenu');
+            if (dashboardMenu.style.display === 'block') {
+                dashboardMenu.style.display = 'none';
+            } else {
+                dashboardMenu.style.display = 'block';
+            }
+        }
+    </script>
+</body>
+</html>

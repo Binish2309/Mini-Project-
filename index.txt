@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>eHub - Mumbai University</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Welcome to eHub - Mumbai University</h1>
+    </header>
+    <nav>
+        <a href="#about">About Us</a>
+        <a href="#contact">Contact</a>
+        <a href="login.html">Login</a>
+    </nav>
+    <div class="container">
+        <section id="about">
+            <h2>About Us</h2>
+            <p>eHub is designed to provide Mumbai University students with all the study resources in one place. We offer e-books, PPTs, syllabuses, programming codes, and previous year papers.</p>
+            <p>Developed by a team of dedicated students to help you succeed in your studies.</p>
+        </section>
+        <section id="contact">
+            <h2>Contact</h2>
+            <p>If you have any questions or need support, please reach out to us at <a href="mailto:support@ehub.com">support@ehub.com</a>.</p>
+        </section>
+    </div>
+    <footer>
+        <p>&copy; 2024 eHub - Mumbai University</p>
+    </footer>
+</body>
+</html>

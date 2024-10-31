@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MURH - Events</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Keeping CSS consistent -->
+    <style>
+        .event-container {
+            text-align: center; /* Center the content */
+            margin: 20px; /* Add some margin */
+            padding: 20px; /* Add some padding for better spacing */
+           
+        }
+
+        .event-poster {
+    max-width: 50%; /* Decrease image size to 50% of the container */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 8px; /* Optional: round corners */
+    margin-bottom: 15px; /* Space below the image */
+}
+
+
+        .event-details {
+            font-family: 'Roboto', sans-serif; /* Use consistent font */
+            margin: 10px 0; /* Add margin above and below details */
+        }
+
+        .event-details h3 {
+            margin: 10px 0; /* Add spacing for the headings */
+            font-weight: 700; /* Bold for emphasis */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Upcoming Events</h1>
+    </header>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <!-- Add more links here as needed -->
+    </nav>
+<!-- Hamburger Dashboard Icon -->
+<div class="dashboard-icon" id="dashboardIcon" onclick="toggleDashboardMenu()">
+    &#9776; <!-- Hamburger icon (menu icon) -->
+</div>
+
+<!-- Hidden Dashboard Menu -->
+<div class="dashboard-menu" id="dashboardMenu">
+    <a href="select_resources.html">Resources</a>
+    <a href="forum.html">Student Forum</a>
+    <a href="mentors.html">Mentor Sessions</a>
+    <a href="suggestion.html">Suggestion Box</a>
+    <a href="collaboration.html">Student Collaboration</a>
+</div>
+
+
+    <div class="event-container">
+       
+            <h2>SIH Internal Hackathon (AIKTC campus)</h2>
+            <img src="SIH.jpeg" alt="Event Poster" class="event-poster">
+            <div class="event-details box">
+                <h3>Date:</h3>
+                <p class="event-info">2024-09-27</p>
+                <h3>Location:</h3>
+                <p class="event-info">AIKTC Campus</p>
+                <h3>Description:</h3>
+                <p class="event-info">This event is an internal hackathon only for the students of AIKTC.</p>
+            </div>
+        </div>
+        
+        <div class="event-container">
+        <h2>AI-CODEX</h2>
+        <img src="AICODEX.jpeg" alt="Event Poster" class="event-poster">
+        <div class="event-details box">
+            <h3>Date:</h3>
+            <p class="event-info">2024-10-06 to 2024-10-20</p>
+            <h3>Location:</h3>
+            <p class="event-info">M.H. Saboo Siddik College of Engineering</p>
+            <h3>Description:</h3>
+            <p class="event-info"></p>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy;2024 - MURH</p>
+    </footer>
+
+    <script>
+        function toggleDashboardMenu() {
+            var dashboardMenu = document.getElementById('dashboardMenu');
+            if (dashboardMenu.style.display === 'block') {
+                dashboardMenu.style.display = 'none';
+            } else {
+                dashboardMenu.style.display = 'block';
+            }
+        }
+    </script>
+    
+
+</body>
+</html>
+
+
+
